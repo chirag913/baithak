@@ -3,9 +3,15 @@
 A static site (no build step): `index.html`, `styles.css`, `script.js`, `favicon.svg`, `og-image.png`.
 Applications go to your Google Sheet **Baithak Club Guestlist → Applications** via a Google Apps Script web app.
 
-## 1. Connect the form to Google Sheets (about 5 minutes)
+## Live connection (already set up)
 
-1. Open the sheet: https://docs.google.com/spreadsheets/d/1D3RK1ZLppIBZ71TKaoub0c8pl9S6FUwdAIi-SoMqa_w/edit
+- **Sheet:** https://docs.google.com/spreadsheets/d/1_2SyCmIJwZidCkFkZu2G_JJP9EidkPbkFmiTXjO9X_Y/edit (owned by the Google account Chrome is signed into)
+- **Web app:** `https://script.google.com/macros/s/AKfycbxba5PUJAzlTGkVmnBZxHonIWobdGf2ycbTE_MMOKwRtmx5-VYIBwUDD9jHl1_iA1AM/exec`. It's already set in `script.js`.
+- The Apps Script project is bound to that sheet (Extensions → Apps Script).
+
+## 1. Reconnecting from scratch (only if you ever need a new sheet)
+
+1. Open the sheet you want to use.
 2. **Extensions → Apps Script**. Delete whatever is in `Code.gs` and paste in the contents of [`apps-script/Code.gs`](apps-script/Code.gs). Save.
 3. In the function dropdown pick **`setup`** → **Run**. Google asks you to authorise. Click *Review permissions*, choose your account, then *Advanced → Go to (project) → Allow*. You'll see this "unverified app" screen because the script is your own.
 4. **Deploy → New deployment →** ⚙ *Select type* → **Web app**

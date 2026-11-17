@@ -2,7 +2,7 @@
 
 // Google Apps Script web-app URL. Replace YOUR_DEPLOYMENT_ID at deploy time
 // (Apps Script → Deploy → Manage deployments → Web app URL, ends in /exec).
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxba5PUJAzlTGkVmnBZxHonIWobdGf2ycbTE_MMOKwRtmx5-VYIBwUDD9jHl1_iA1AM/exec";
 
 const MIN_AGE = 18;
 const MAX_AGE = 35;
