@@ -20,7 +20,7 @@ const HEADERS = [
 ];
 const PHONE_COL = 3; // column C
 const EVENT_COL = 12; // column L
-const FRIENDLY_ERROR = 'Something went wrong on our side. Please try again in a minute, or DM us on Instagram.';
+const FRIENDLY_ERROR = 'Something went wrong on our side. Please try again in a few minutes.';
 
 function doPost(e) {
   const lock = LockService.getScriptLock();

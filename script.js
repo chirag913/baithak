@@ -7,7 +7,7 @@ const APPS_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/e
 const MIN_AGE = 18;
 const MAX_AGE = 35;
 const AGE_MSG = "This baithak is for ages 18–35";
-const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a minute, or DM us on Instagram @baithak.club.";
+const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a few minutes — your answers are still here.";
 
 (function () {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -172,7 +172,7 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
 
     if (APPS_SCRIPT_URL.includes("YOUR_DEPLOYMENT_ID")) {
       console.warn("[Baithak] APPS_SCRIPT_URL is still the placeholder — set it in script.js.");
-      showAlert("Applications aren’t connected yet. Please DM us on Instagram @baithak.club and we’ll sort you out.");
+      showAlert("Applications open shortly. Please check back in a little while.");
       return;
     }
 
@@ -210,7 +210,7 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
       console.error("[Baithak] Network error", err);
       showAlert(navigator.onLine === false
         ? "You seem to be offline. Check your connection and try again — your answers are still here."
-        : "We couldn’t confirm that your application went through. Please try once more — if it keeps happening, DM us on Instagram @baithak.club.");
+        : "We couldn’t confirm that your application went through. Please try once more in a few minutes — your answers are still here.");
     } finally {
       setLoading(false);
     }

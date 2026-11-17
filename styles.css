@@ -117,10 +117,6 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; letter-spac
 .nav a { font-size: 12px; font-weight: 500; text-decoration: none; color: var(--ink); opacity: .78; transition: opacity .2s, color .2s; }
 .nav a:hover { opacity: 1; color: var(--ember); }
 .header-actions { display: flex; align-items: center; gap: 10px; }
-.icon-link { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 999px; color: var(--ink); transition: color .2s, background .2s; }
-.icon-link:hover { color: var(--ember); background: rgba(181, 69, 26, .08); }
-.icon-link svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; }
-.icon-link .dot { fill: currentColor; stroke: none; }
 
 /* ---------- Hero ---------- */
 .hero {
