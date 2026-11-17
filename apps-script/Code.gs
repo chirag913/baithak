@@ -34,7 +34,7 @@ function doPost(e) {
 
     const row = normalize_(data);
 
-    const missing = ['fullName', 'phone', 'email', 'age', 'instagram'].filter(function (k) { return !row[k]; });
+    const missing = ['fullName', 'phone', 'email', 'age'].filter(function (k) { return !row[k]; });
     if (missing.length) {
       return respond_({ ok: false, error: 'Please fill in every field and try again.' });
     }
@@ -82,7 +82,7 @@ function doPost(e) {
     return respond_({
       ok: true,
       status: status,
-      message: 'Application received. We will review your Instagram and WhatsApp you if you make the list.'
+      message: 'Application received. We will review it and WhatsApp you if you make the list.'
     });
   } catch (err) {
     console.error(err && err.stack ? err.stack : err); // visible under Executions, never sent to the browser

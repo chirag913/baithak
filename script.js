@@ -7,7 +7,8 @@ const APPS_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/e
 const MIN_AGE = 18;
 const MAX_AGE = 35;
 const AGE_MSG = "This baithak is for ages 18–35";
-const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a few minutes — your answers are still here.";
+const WHATSAPP = "+91 99115 90519";
+const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a few minutes, or WhatsApp us on " + WHATSAPP + ".";
 
 (function () {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -71,15 +72,6 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
     return null;
   }
 
-  // Accepts "handle", "@handle" or a pasted profile URL
-  function normaliseHandle(raw) {
-    let h = String(raw).trim();
-    const m = h.match(/instagram\.com\/([^/?#\s]+)/i);
-    if (m) h = m[1];
-    h = h.replace(/^@+/, "").replace(/\/+$/, "");
-    return /^[A-Za-z0-9._]{1,30}$/.test(h) ? h.toLowerCase() : null;
-  }
-
   const validators = {
     fullName: (v) => v.trim().length >= 2 || "Please enter your full name.",
     phone: (v) => !!normalisePhone(v) || (v.trim() ? "Enter a valid 10-digit WhatsApp number." : "We need a WhatsApp number to send your invite."),
@@ -92,7 +84,6 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
     },
     gender: (v) => !!v || "Please choose an option.",
     city: (v) => v.trim().length >= 2 || "Where are you based?",
-    instagram: (v) => !!normaliseHandle(v) || (v.trim() ? "Enter just your handle, e.g. @yourname." : "We verify through Instagram, so this is needed."),
     profession: (v) => v.trim().length >= 2 || "What do you do?",
     whyJoin: (v) => v.trim().length >= 10 || "A line or two, please — it helps us build the room.",
     source: (v) => !!v || "Please choose an option.",
@@ -172,7 +163,7 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
 
     if (APPS_SCRIPT_URL.includes("YOUR_DEPLOYMENT_ID")) {
       console.warn("[Baithak] APPS_SCRIPT_URL is still the placeholder — set it in script.js.");
-      showAlert("Applications open shortly. Please check back in a little while.");
+      showAlert("Applications open shortly. Meanwhile, WhatsApp us on " + WHATSAPP + ".");
       return;
     }
 
@@ -183,7 +174,6 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
       age: String(Number($("age").value)),
       gender: $("gender").value,
       city: $("city").value.trim(),
-      instagram: normaliseHandle($("instagram").value),
       profession: $("profession").value.trim(),
       whyJoin: $("whyJoin").value.trim(),
       source: $("source").value,
@@ -210,7 +200,7 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
       console.error("[Baithak] Network error", err);
       showAlert(navigator.onLine === false
         ? "You seem to be offline. Check your connection and try again — your answers are still here."
-        : "We couldn’t confirm that your application went through. Please try once more in a few minutes — your answers are still here.");
+        : "We couldn’t confirm that your application went through. Please try once more — if it keeps happening, WhatsApp us on " + WHATSAPP + ".");
     } finally {
       setLoading(false);
     }
