@@ -36,7 +36,7 @@ Applications go to your Google Sheet **Baithak Club Guestlist → Applications**
 - **Status** starts as `Pending`. Age outside 18–35 is recorded as `Rejected` (the site already blocks this, so it should be rare).
 - **Notes** flags `Possible duplicate (same phone + event)` automatically.
 - Phone is normalised to `+91 98765 43210`.
-- The form no longer asks for Instagram, so the **Instagram** column stays blank. Delete it in the sheet only if you also remove it from `HEADERS` and `appendRow` in `Code.gs`.
+- Instagram handles are stored without the `@`; pasted profile URLs are reduced to just the handle.
 - Values beginning with `= + - @` are stored as plain text, so a submission can never run as a formula.
 
 ## 2. Before going live

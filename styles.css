@@ -383,6 +383,23 @@ input[type="checkbox"]:checked::after { transform: rotate(45deg) translate(-1px,
 .success h3 { font-size: clamp(30px, 6vw, 42px); margin-bottom: 12px; }
 .success p { max-width: 30em; margin-left: auto; margin-right: auto; }
 
+/* ---------- Brand sponsors ---------- */
+.section--brands { padding-top: 0; background: var(--cream); }
+.brands {
+  display: grid; gap: 24px; align-items: end;
+  padding: 34px 24px;
+  border-top: 1px solid rgba(181, 69, 26, .28);
+  border-bottom: 1px solid rgba(181, 69, 26, .28);
+}
+.brands .section-title { font-size: clamp(30px, 6vw, 46px); margin-bottom: 14px; }
+.brands-copy { max-width: 34em; color: #43382F; margin: 0; }
+.brands-cta .btn { width: 100%; }
+.brands-cta .hint { margin-top: 10px; text-align: center; }
+@media (min-width: 860px) {
+  .brands { grid-template-columns: 1fr auto; gap: 60px; padding: 48px 8px; }
+  .brands-cta .btn { width: auto; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: var(--cream); padding: 56px 0 calc(110px + env(safe-area-inset-bottom)); }
 .footer-inner { display: grid; gap: 28px; }

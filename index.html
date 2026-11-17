@@ -41,6 +41,7 @@
         <a href="#how">How it works</a>
         <a href="#night">The night</a>
         <a href="#apply">Apply</a>
+        <a href="#brands">Brands</a>
       </nav>
       <div class="header-actions">
         <a class="icon-link" href="https://wa.me/919911590519" target="_blank" rel="noopener" aria-label="WhatsApp Baithak Club on +91 99115 90519">
@@ -66,7 +67,7 @@
           Not a ticket.<br><em>An invite.</em>
           <svg class="flourish" viewBox="0 0 320 18" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 C 60 3, 120 3, 170 9 S 270 16, 318 6"/></svg>
         </h1>
-        <p class="hero-sub reveal">Baithak Club is a curated guestlist for people 18–35. Apply once, a real person reads it, and if the room is right, your invite arrives on WhatsApp.</p>
+        <p class="hero-sub reveal">Baithak Club is a curated guestlist for people 18–35. Apply once, we check your Instagram, and if the room is right, your invite arrives on WhatsApp.</p>
         <div class="cta-row reveal">
           <a class="btn" href="#apply">Apply for Bonfire Night</a>
           <a class="btn btn--ghost" href="#how">How it works</a>
@@ -85,12 +86,12 @@
           <li class="step glass reveal">
             <span class="step-num" aria-hidden="true">01</span>
             <h3>Apply</h3>
-            <p>One form, under two minutes. Name, WhatsApp, a little about you.</p>
+            <p>One form, under two minutes. Name, WhatsApp, Instagram, a little about you.</p>
           </li>
           <li class="step glass reveal">
             <span class="step-num" aria-hidden="true">02</span>
             <h3>We verify</h3>
-            <p>A human reads every application and checks whether you fit the 18–35 room.</p>
+            <p>A human checks your public Instagram (set it public) and whether you fit the 18–35 room.</p>
           </li>
           <li class="step glass reveal">
             <span class="step-num" aria-hidden="true">03</span>
@@ -257,11 +258,11 @@
           </details>
           <details name="faq">
             <summary>Who can apply?</summary>
-            <p>Ages 18–35. Every application is read by a person before anyone is invited. Applications from outside that age range are declined.</p>
+            <p>Ages 18–35. We verify Instagram before inviting. Applications from outside that age range are declined.</p>
           </details>
           <details name="faq">
             <summary>How does verification work?</summary>
-            <p>We read every application by hand. We look for a real person and a good fit for a mixed, respectful room — not a CV.</p>
+            <p>Keep your Instagram public until you hear from us. We look for a real person, a good fit for a mixed, respectful room — not follower counts.</p>
           </details>
           <details name="faq">
             <summary>Is a seat guaranteed if I apply?</summary>
@@ -293,7 +294,7 @@
         <div class="form-card glass reveal">
           <p class="eyebrow">Applications open</p>
           <h2 id="apply-title" class="section-title">Ask for a seat at Bonfire Night</h2>
-          <p class="form-lede">Under two minutes. Applying is free; the night is ₹999 per guest if you’re invited.</p>
+          <p class="form-lede">Under two minutes. Keep your Instagram public until you hear from us. Applying is free; the night is ₹999 per guest if you’re invited.</p>
 
           <form id="apply-form" class="form" novalidate>
             <div class="form-alert" id="form-alert" role="alert" hidden></div>
@@ -349,6 +350,16 @@
               </div>
 
               <div class="field">
+                <label for="instagram">Instagram handle</label>
+                <div class="affix">
+                  <span class="affix-tag" aria-hidden="true">@</span>
+                  <input id="instagram" name="instagram" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="yourhandle" required maxlength="60" aria-describedby="instagram-hint instagram-error">
+                </div>
+                <p class="hint" id="instagram-hint">Set to public while we review.</p>
+                <p class="error" id="instagram-error"></p>
+              </div>
+
+              <div class="field">
                 <label for="profession">Profession</label>
                 <input id="profession" name="profession" type="text" autocomplete="organization-title" placeholder="Designer, student, founder…" required maxlength="80">
                 <p class="error" id="profession-error"></p>
@@ -360,6 +371,7 @@
                   <select id="source" name="source" required>
                     <option value="" disabled selected>Select</option>
                     <option>WhatsApp group</option>
+                    <option>Instagram</option>
                     <option>Friend</option>
                     <option>In the neighbourhood</option>
                     <option>Other</option>
@@ -368,13 +380,7 @@
                 <p class="error" id="source-error"></p>
               </div>
 
-              <div class="field field--full">
-                <label for="whyJoin">Why do you want to join?</label>
-                <textarea id="whyJoin" name="whyJoin" rows="3" required maxlength="600" placeholder="A couple of lines is plenty."></textarea>
-                <p class="error" id="whyJoin-error"></p>
-              </div>
-
-              <div class="field field--full">
+              <div class="field">
                 <label for="event">Event</label>
                 <div class="select">
                   <select id="event" name="event" required>
@@ -382,6 +388,12 @@
                   </select>
                 </div>
                 <p class="error" id="event-error"></p>
+              </div>
+
+              <div class="field field--full">
+                <label for="whyJoin">Why do you want to join?</label>
+                <textarea id="whyJoin" name="whyJoin" rows="3" required maxlength="600" placeholder="A couple of lines is plenty."></textarea>
+                <p class="error" id="whyJoin-error"></p>
               </div>
             </div>
 
@@ -393,7 +405,7 @@
 
             <div class="field field--check">
               <input id="consent" name="consent" type="checkbox" value="yes" required aria-describedby="consent-error">
-              <label for="consent">I am 18–35, and I understand that applying does not guarantee an invite.</label>
+              <label for="consent">I am 18–35, my Instagram is or will be public for review, and I understand that applying does not guarantee an invite.</label>
               <p class="error" id="consent-error"></p>
             </div>
 
@@ -407,8 +419,25 @@
           <div class="success" id="form-success" tabindex="-1" hidden>
             <svg class="success-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="10" r="4.4"/><circle cx="11" cy="33" r="4.4"/><circle cx="37" cy="33" r="4.4"/><circle class="mark-fire" cx="24" cy="26" r="2.6"/></svg>
             <h3>Application received.</h3>
-            <p>We’ve got your application. We’ll review it and WhatsApp you if you make the Bonfire Night list.</p>
+            <p>We’ve got your application. We’ll review your Instagram and WhatsApp you if you make the Bonfire Night list.</p>
+            <p class="muted">Keep your Instagram public until you hear from us.</p>
             <p class="muted">Questions? <a href="https://wa.me/919911590519" target="_blank" rel="noopener">WhatsApp us on +91 99115 90519</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BRAND SPONSORS -->
+    <section class="section section--brands" id="brands" aria-labelledby="brands-title">
+      <div class="wrap">
+        <div class="brands reveal">
+          <div>
+            <p class="eyebrow">For brands</p>
+            <h2 id="brands-title" class="section-title">Sponsor a baithak.</h2>
+            <p class="brands-copy">We bring a few brands that fit the room to the fire: something to drink, something to eat, something warm. If yours belongs at Bonfire Night, message us.</p>
+          </div>
+          <div class="brands-cta">
+            <a class="btn" href="https://wa.me/919911590519?text=Hi%20Baithak%20Club!%20I'm%20reaching%20out%20on%20behalf%20of%20a%20brand%20interested%20in%20sponsoring%20Bonfire%20Night%20(21%20Nov%2C%20Gaur%20City).%20Brand%20name%3A%20" target="_blank" rel="noopener">Sponsor on WhatsApp</a>
+            <p class="hint">+91 99115 90519 · Brand partnerships only</p>
           </div>
         </div>
       </div>
@@ -427,6 +456,7 @@
       <div class="footer-meta">
         <p>Gaur City / NCR</p>
         <p><a href="https://wa.me/919911590519" target="_blank" rel="noopener">WhatsApp · +91 99115 90519</a></p>
+        <p><a href="#brands">Brand sponsorships</a></p>
       </div>
     </div>
   </footer>

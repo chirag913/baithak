@@ -72,6 +72,15 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
     return null;
   }
 
+  // Accepts "handle", "@handle" or a pasted profile URL
+  function normaliseHandle(raw) {
+    let h = String(raw).trim();
+    const m = h.match(/instagram\.com\/([^/?#\s]+)/i);
+    if (m) h = m[1];
+    h = h.replace(/^@+/, "").replace(/\/+$/, "");
+    return /^[A-Za-z0-9._]{1,30}$/.test(h) ? h.toLowerCase() : null;
+  }
+
   const validators = {
     fullName: (v) => v.trim().length >= 2 || "Please enter your full name.",
     phone: (v) => !!normalisePhone(v) || (v.trim() ? "Enter a valid 10-digit WhatsApp number." : "We need a WhatsApp number to send your invite."),
@@ -84,6 +93,7 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
     },
     gender: (v) => !!v || "Please choose an option.",
     city: (v) => v.trim().length >= 2 || "Where are you based?",
+    instagram: (v) => !!normaliseHandle(v) || (v.trim() ? "Enter just your handle, e.g. @yourname." : "We verify through Instagram, so this is needed."),
     profession: (v) => v.trim().length >= 2 || "What do you do?",
     whyJoin: (v) => v.trim().length >= 10 || "A line or two, please — it helps us build the room.",
     source: (v) => !!v || "Please choose an option.",
@@ -174,6 +184,7 @@ const FRIENDLY_ERROR = "Something went wrong on our side. Please try again in a 
       age: String(Number($("age").value)),
       gender: $("gender").value,
       city: $("city").value.trim(),
+      instagram: normaliseHandle($("instagram").value),
       profession: $("profession").value.trim(),
       whyJoin: $("whyJoin").value.trim(),
       source: $("source").value,
