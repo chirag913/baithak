@@ -423,7 +423,7 @@ input[type="checkbox"]:checked::after { transform: rotate(45deg) translate(-1px,
   .steps { grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .step { padding: 36px 30px 32px; }
   .event { padding: 56px 60px 48px; }
-  .event-meta { grid-template-columns: 1fr 1.4fr; gap: 40px; }
+  .event-meta { grid-template-columns: 1fr 1.3fr .8fr; gap: 36px; }
   .gallery {
     grid-auto-columns: calc((min(100vw, var(--max)) - 2 * var(--gutter) - 3 * 18px) / 3.4);
     gap: 18px;

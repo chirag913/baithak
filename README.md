@@ -37,7 +37,7 @@ Applications go to your Google Sheet **Baithak Club Guestlist → Applications**
 - **OG image / WhatsApp preview:** in `index.html`, change `og:image` to an absolute URL, e.g. `https://yourdomain.com/og-image.png`, and add `<meta property="og:url" content="https://yourdomain.com/">`.
 - **Photos:** the 6 gallery frames are illustrated placeholders. Swap each `<svg class="shot-art">…</svg>` for
   `<img src="images/01-bonfire.jpg" alt="…" loading="lazy" width="900" height="1200">` (portrait 3:4, warm, documentary). The copper frame and captions stay.
-- **Fee line** in the FAQ is a placeholder, as you asked. Update it once you've decided.
+- **Contribution:** ₹999 per guest appears on the event card, in the form intro and in the FAQ. Search `₹999` in `index.html` to change it.
 
 ## 3. Hosting
 
